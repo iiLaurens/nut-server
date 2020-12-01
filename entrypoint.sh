@@ -5,6 +5,8 @@ echo "\n$ID|$PASSWORD" >> /root/nut.src.latest/conf/users.conf
 echo "* * * * * wget --spider --user $ID --password $PASSWORD http://127.0.0.1:9000/api/scan >> /var/log/cron.log\n" > /etc/cron.d/scraping-nut
 chmod 0644 /etc/cron.d/scraping-nut && crontab /etc/cron.d/scraping-nut
 
+ln -sf /games /root/nut.src.latest/games
+
 #cron -f &
 service cron start
 
