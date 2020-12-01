@@ -12,8 +12,6 @@ if $SCRAPING_ENABLED; then
 
     #cron -f &
     service cron start
-else
-    crontab /etc/cron.d/no-scraping
 fi
 
 python3 /root/nut.src.latest/nut.py -S >> /var/log/nut.log
