@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # add custom id and password to secure nut-server
-echo "\n$ID|$PASSWORD" >> /root/nut.src.latest/conf/users.conf
+echo "\n$ID|$PASSWORD" >> /root/nut-master/conf/users.conf
 
 # link /games to local folder to let nutfs browse folder
-ln -sf /games /root/nut.src.latest/games
+ln -sf /games /root/nut-master/games
 
 if $SCRAPING_ENABLED; then
     echo "* * * * * wget --spider --user $ID --password $PASSWORD http://127.0.0.1:9000/api/scan >> /var/log/cron.log\n" > /etc/cron.d/scraping-nut
