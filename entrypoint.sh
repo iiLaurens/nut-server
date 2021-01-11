@@ -14,4 +14,4 @@ if $SCRAPING_ENABLED; then
     service cron start
 fi
 
-python3 /root/nut.src.latest/nut.py -S >> /var/log/nut.log
+python3 /root/nut-master/nut.py -S >> /var/log/nut.log
