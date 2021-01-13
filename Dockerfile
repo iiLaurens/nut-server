@@ -6,8 +6,9 @@ ARG branch_name=master
 
 RUN apt-get update && apt-get -y install cron wget unzip python-pyqt5 libssl-dev libcurl4-openssl-dev
 RUN wget https://github.com/blawar/nut/archive/master.zip && \
-    unzip nut-master -d /root && \
-    cd /root/nut-master && \
+    unzip master -d /root && \
+    mv /root/master /root/nut \
+    cd /root/nut && \
     pip3 install -r requirements.txt
 
 COPY /entrypoint.sh /
