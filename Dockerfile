@@ -4,7 +4,7 @@ MAINTAINER marcel@marquez.fr
 
 ARG branch_name=master
 
-RUN apt-get update && apt-get -y install cron wget unzip python-pyqt5 libssl-dev libcurl4-openssl-dev libusb
+RUN apt-get update && apt-get -y install cron wget unzip python-pyqt5 libssl-dev libcurl4-openssl-dev
 RUN wget https://github.com/blawar/nut/archive/master.zip && \
     unzip nut-master -d /root && \
     cd /root/nut-master && \
