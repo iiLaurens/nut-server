@@ -5,7 +5,6 @@ echo "\n$ID|$PASSWORD" >> /root/nut-master/conf/users.conf
 
 # link /games to local folder to let nutfs browse folder
 ln -sf /games /root/nut-master/games
-ln -sf /root/nut-master/conf/nut.conf /config/nut.conf
 
 if $SCRAPING_ENABLED; then
     echo "0 * * * * wget --spider --user $ID --password $PASSWORD http://127.0.0.1:9000/api/scan > /dev/null 2>&1" > /etc/cron.d/scraping-nut
