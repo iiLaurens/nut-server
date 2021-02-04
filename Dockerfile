@@ -1,12 +1,11 @@
 FROM python:latest
 
-MAINTAINER marcel@marquez.fr
-
 ARG branch_name=master
 
 RUN apt-get update && apt-get -y install cron wget unzip python-pyqt5 libssl-dev libcurl4-openssl-dev
-RUN wget https://github.com/blawar/nut/archive/master.zip && \
+RUN wget https://github.com/blawar/nut/archive/v3.1.zip && \
     unzip master -d /root && \
+    mv /root/nut-3.1 /root/nut-master && \
     cd /root/nut-master && \
     pip3 install -r requirements.txt
 
@@ -15,7 +14,7 @@ COPY conf /root/nut-master/conf
 
 RUN chmod +x /entrypoint.sh
 
-RUN touch /var/log/cron.log && touch /var/log/nut.log
+RUN touch /var/log/cron.log
 
 EXPOSE 9000
 
